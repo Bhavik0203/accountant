@@ -26,22 +26,22 @@ import Footer from "./components/footer";
 const services = [
   {
     id: 1,
-    title: "Compliance Ideas",
+    title: "Compliance iNBOX",
     icon: <Image src={fileIcon} alt="Compliance" width={62} height={62} />
   },
   {
     id: 2,
-    title: "Analytics Ideas", 
+    title: "Analytics iNBOX", 
     icon: <Image src={globeIcon} alt="Analytics" width={62} height={62} />
   },
   {
     id: 3,
-    title: "Financial Ideas",
+    title: "Financial iNBOX",
     icon: <Image src={windowIcon} alt="Financial" width={62} height={62} />
   },
   {
     id: 4,
-    title: "Audit Flow Ideas",
+    title: "Audit Flow iNBOX",
     icon: <Image src={nextIcon} alt="Audit Flow" width={62} height={62} />
   }
 ];
@@ -142,7 +142,7 @@ export default function Home() {
               management, and analytics.
             </p>
             
-            <button className="bg-[#213AC8] text-white px-10 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl border-0">
+            <button className="bg-[#213AC8] text-white cursor-pointer px-10 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl border-0">
               Start Free Trial
             </button>
           </div>
@@ -227,7 +227,7 @@ export default function Home() {
               
               {/* Top Right Card */}
               <div className="ml-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" style={{ animationDelay: '0.1s' }}>
-                <div className="relative ml-6 bg-white rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="relative ml-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                   <div className="mb-4">
                     <h3 className="text-[20px] font-bold text-gray-800 mb-2">
                       Unified Platform
@@ -246,7 +246,7 @@ export default function Home() {
 
               {/* Middle Left Card */}
               <div className="mr-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" style={{ animationDelay: '0.2s' }}>
-                <div className="relative mr-6 bg-white rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="relative mr-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                   <div className="mb-4">
                     <h3 className="text-[20px] font-bold text-gray-800 mb-2">
                      Built for Finance Professionals
@@ -265,7 +265,7 @@ export default function Home() {
 
               {/* Bottom Right Card */}
               <div className="ml-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" style={{ animationDelay: '0.3s' }}>
-                <div className="relative ml-6 bg-white rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="relative ml-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                   <div className="mb-4">
                     <h3 className="text-[20px] font-bold text-gray-800 mb-2">
                    Secure & Compliant
@@ -284,7 +284,7 @@ export default function Home() {
 
               {/* Bottom Left Card */}
               <div className="mr-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" style={{ animationDelay: '0.4s' }}>
-                <div className="relative mr-6 bg-white rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="relative mr-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                   <div className="mb-4">
                     <h3 className="text-[20px] font-bold text-gray-800 mb-2">
                        Scalable for All Firm Sizes
@@ -341,7 +341,7 @@ export default function Home() {
        
         <div 
         ref={textRef}
-        className="space-y-6 my-16  animate-slide-up"
+        className="space-y-6 mb-16  animate-slide-up"
       >
           <h2 className="text-4xl lg:text-5xl font-bold">
             <span className="text-gray-400">See the</span>{" "}
@@ -351,7 +351,7 @@ export default function Home() {
             Watch how our platform simplifies your workflow from compliance to invoicing — in under 2 minutes.
           </p>
           <div className="pt-4">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <button className="bg-blue-600 cursor-pointer text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               Start Free Trial
             </button>
           </div>

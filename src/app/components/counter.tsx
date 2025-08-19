@@ -122,7 +122,7 @@ const CounterSection: React.FC = () => {
       ref={sectionRef}
     //   className="bg-cover bg-center bg-no-repeat  py-20 px-6" style={{ backgroundImage: `url(${bg3.src})` }}
     >
-      <div className="max-w-6xl mx-auto py-16 ">
+      <div className="max-w-6xl mx-auto pt-16 pb-10 ">
         {/* Header */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800">

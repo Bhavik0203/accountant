@@ -131,7 +131,7 @@ const FinancialSuiteLanding = () => {
                   {currentTool.description}
                 </p>
                 
-                <button className="inline-flex items-center space-x-3 text-blue-600 hover:text-blue-700 font-semibold transition-colors group border-2 border-blue-600 rounded-xl px-6 py-3 hover:bg-blue-50 hover:shadow-md">
+                <button className="inline-flex  cursor-pointer items-center space-x-3 text-blue-600 hover:text-blue-700 font-semibold transition-colors group border-2 border-blue-600 rounded-xl px-6 py-3 hover:bg-blue-50 hover:shadow-md">
                   <span>Learn More</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>

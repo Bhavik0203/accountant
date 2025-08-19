@@ -142,7 +142,7 @@ export default function TestimonialSection() {
           {/* Previous Button */}
           <button
             onClick={prevSlide}
-            className="w-12 h-12 rounded-xl bg-blue-100 hover:bg-blue-200 flex items-center justify-center transition-colors"
+            className="w-12 h-12 rounded-xl cursor-pointer bg-blue-100 hover:bg-blue-200 flex items-center justify-center transition-colors"
           >
             <ChevronLeft className="w-6 h-6 text-blue-600" />
           </button>
@@ -153,7 +153,7 @@ export default function TestimonialSection() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
+                className={`w-3 h-3 rounded-full cursor-pointer transition-colors ${
                   index === currentSlide ? 'bg-gray-700' : 'bg-gray-300'
                 }`}
               />
@@ -163,7 +163,7 @@ export default function TestimonialSection() {
           {/* Next Button */}
           <button
             onClick={nextSlide}
-            className="w-12 h-12 rounded-xl bg-blue-600 hover:bg-blue-700 flex items-center justify-center transition-colors"
+            className="w-12 h-12 rounded-xl cursor-pointer bg-blue-600 hover:bg-blue-700 flex items-center justify-center transition-colors"
           >
             <ChevronRight className="w-6 h-6 text-white" />
           </button>

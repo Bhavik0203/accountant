@@ -43,13 +43,13 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center">
+            <div className="flex items-center cursor-pointer">
               <Image 
                 src={logo} 
                 alt="Accountant Tech Lab Logo" 
                 width={120} 
-                height={40} 
-                className="h-10 w-auto" 
+                height={46} 
+                className="h-14 w-auto" 
               />
             </div>
             
@@ -57,35 +57,35 @@ const Header = () => {
             <nav className="hidden md:flex items-center space-x-0">
               <a 
                 href="#about" 
-                className="text-gray-600 hover:text-blue-600 transition-colors px-4 py-2 font-medium"
+                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
               >
                 About Us
               </a>
               <div className="w-px h-6 bg-gray-300"></div>
               <a 
                 href="#products" 
-                className="text-gray-600 hover:text-blue-600 transition-colors px-4 py-2 font-medium"
+                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
               >
                 Products
               </a>
               <div className="w-px h-6 bg-gray-300"></div>
               <a 
                 href="#solutions" 
-                className="text-gray-600 hover:text-blue-600 transition-colors px-4 py-2 font-medium"
+                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
               >
                 Solutions
               </a>
               <div className="w-px h-6 bg-gray-300"></div>
               <a 
                 href="#features" 
-                className="text-gray-600 hover:text-blue-600 transition-colors px-4 py-2 font-medium"
+                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
               >
                 Features
               </a>
               <div className="w-px h-6 bg-gray-300"></div>
               <a 
                 href="#contact" 
-                className="text-gray-600 hover:text-blue-600 transition-colors px-4 py-2 font-medium"
+                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
               >
                 Contact Us
               </a>
@@ -93,7 +93,7 @@ const Header = () => {
             
             {/* CTA Button */}
             <div className="hidden md:block">
-              <button className="border-2 border-blue-900 text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-200 font-medium">
+              <button className="border-2 cursor-pointer border-blue-900 text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-200 font-medium">
                 Book A Demo
               </button>
             </div>
@@ -102,7 +102,7 @@ const Header = () => {
             <div className="md:hidden">
               <button
                 onClick={toggleMobileMenu}
-                className="text-gray-600 hover:text-blue-600 transition-colors p-2"
+                className="text-gray-600 hover:text-blue-600 transition-colors p-2 cursor-pointer"
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? (
@@ -154,7 +154,7 @@ const Header = () => {
                   Contact Us
                 </a>
                 <div className="pt-4">
-                  <button className="w-full border-2 border-blue-900 text-blue-900 px-6 py-3 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-200 font-medium">
+                  <button className="w-full border-2 cursor-pointer border-blue-900 text-blue-900 px-6 py-3 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-200 font-medium">
                     Book A Demo
                   </button>
                 </div>
@@ -173,7 +173,7 @@ const Header = () => {
             {/* Up arrow button */}
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="bg-white hover:bg-gray-600 hover:text-white text-[#303030] p-2 rounded-md transition-colors"
+              className="bg-white cursor-pointer hover:bg-gray-600 hover:text-white text-[#303030] p-2 rounded-md transition-colors"
               aria-label="Scroll to top"
             >
               <ChevronUp className="h-4 w-4" />
@@ -182,7 +182,7 @@ const Header = () => {
             {/* Navigation items */}
             {navigationItems.map((item, index) => (
               <React.Fragment key={item.name}>
-                <button className="bg-white hover:bg-gray-600 hover:text-white text-[#303030] px-3 py-2 rounded-md transition-colors font-mono text-sm flex items-center space-x-1">
+                <button className="bg-white cursor-pointer hover:bg-gray-600 hover:text-white text-[#303030] px-3 py-2 rounded-md transition-colors font-mono text-sm flex items-center space-x-1">
                   <span>{item.name}</span>
                   {item.hasPlus && <Plus className="h-3 w-3 text-white" />}
                 </button>
@@ -193,7 +193,7 @@ const Header = () => {
             ))}
 
             {/* CTA Button */}
-            <button className="border-2 border-blue-900 bg-white text-blue-900 px-4 py-2 rounded-md transition-colors font-mono text-sm font-medium">
+            <button className="border-2 cursor-pointer  border-blue-900 bg-white text-blue-900 px-4 py-2 rounded-md transition-colors font-mono text-sm font-medium">
               BOOK A MEETING
             </button>
           </div>

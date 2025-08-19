@@ -144,7 +144,7 @@ const VideoPlayer: React.FC = () => {
             {showPlayButton && (
               <button
                 onClick={handlePlayPause}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 flex items-center justify-center group"
+                className="absolute cursor-pointer top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 flex items-center justify-center group"
               >
                 <div className="w-0 h-0 border-l-[12px] border-l-blue-600 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1 group-hover:border-l-blue-700 transition-colors"></div>
               </button>
@@ -180,7 +180,7 @@ const VideoPlayer: React.FC = () => {
                 setIsPlaying(false);
                 setShowPlayButton(true);
               }}
-              className={`w-2 h-2 rounded-full transition-all ${
+              className={`w-2 h-2 cursor-pointer rounded-full transition-all ${
                 index === currentVideoIndex 
                   ? 'bg-blue-600' 
                   : 'bg-gray-300 hover:bg-gray-400'
