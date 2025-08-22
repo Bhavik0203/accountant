@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-
+import Image from 'next/image';
 const HowItWorks = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-16 ">
@@ -10,7 +10,7 @@ const HowItWorks = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
         {/* Vertical connecting line */}
-        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-500 via-teal-400 to-teal-500 transform -translate-x-1/2"></div>
+        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 border-l-2 border-dotted border-teal-500 transform -translate-x-1/2"></div>
         
         {/* Step 1 */}
         <div className="flex flex-col items-start relative">
@@ -35,46 +35,14 @@ const HowItWorks = () => {
           </div>
           
           <div className="mt-8 w-full flex justify-center">
-            <div className="relative w-32 h-32 mx-auto">
-              <div className="absolute top-4 left-8 w-16 h-20 bg-blue-100 rounded-lg border-2 border-blue-200">
-                <div className="w-full h-2 bg-blue-300 rounded-t-md"></div>
-                <div className="p-2 space-y-1">
-                  <div className="w-8 h-1 bg-blue-400 rounded"></div>
-                  <div className="w-10 h-1 bg-blue-300 rounded"></div>
-                  <div className="w-6 h-1 bg-blue-300 rounded"></div>
-                </div>
-              </div>
-              <div className="absolute bottom-0 right-4">
-                <div className="w-8 h-12 bg-gray-800 rounded-t-full"></div>
-                <div className="w-6 h-6 bg-pink-300 rounded-full mx-auto -mt-1"></div>
-                <div className="w-3 h-8 bg-blue-600 mx-auto"></div>
-                <div className="flex space-x-1 mt-1">
-                  <div className="w-2 h-4 bg-gray-800 rounded"></div>
-                  <div className="w-2 h-4 bg-gray-800 rounded"></div>
-                </div>
-              </div>
-            </div>
+             <Image src="/images/howitwork2.png" alt="Step 1" width={250} height={250} />
           </div>
         </div>
 
         {/* Step 2 */}
         <div className="flex flex-col items-start relative">
-        <div className=" w-full flex justify-center">
-            <div className="relative w-32 h-32 mx-auto">
-              <div className="absolute top-2 right-8">
-                <div className="w-8 h-12 bg-gray-800 rounded-t-full"></div>
-                <div className="w-6 h-6 bg-pink-300 rounded-full mx-auto -mt-1"></div>
-                <div className="w-3 h-8 bg-blue-600 mx-auto"></div>
-                <div className="flex space-x-1 mt-1">
-                  <div className="w-2 h-4 bg-gray-800 rounded"></div>
-                  <div className="w-2 h-4 bg-gray-800 rounded"></div>
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-4 w-2 h-8 bg-purple-500 rounded"></div>
-              <div className="absolute bottom-8 left-8 w-2 h-6 bg-blue-500 rounded"></div>
-              <div className="absolute bottom-6 left-12 w-2 h-4 bg-green-500 rounded"></div>
-              <div className="absolute bottom-2 left-16 w-2 h-10 bg-orange-500 rounded"></div>
-            </div>
+        <div className=" w-full flex justify-center ">
+              <Image src="/images/howitwork1.png" alt="Step 2" width={250} height={250} />
           </div>
           <div className="flex mt-8 items-start w-full">
             <div className="flex-shrink-0 mr-6">
@@ -122,68 +90,14 @@ const HowItWorks = () => {
           </div>
           
           <div className="mt-8 w-full flex justify-center">
-            <div className="relative w-32 h-32 mx-auto">
-              <div className="absolute top-8 left-4">
-                <div className="w-8 h-12 bg-gray-800 rounded-t-full"></div>
-                <div className="w-6 h-6 bg-pink-300 rounded-full mx-auto -mt-1"></div>
-                <div className="w-3 h-8 bg-orange-500 mx-auto"></div>
-                <div className="flex space-x-1 mt-1">
-                  <div className="w-2 h-4 bg-gray-800 rounded"></div>
-                  <div className="w-2 h-4 bg-gray-800 rounded"></div>
-                </div>
-              </div>
-              <div className="absolute top-4 right-8 w-16 h-12 bg-gray-100 rounded-lg border">
-                <div className="p-1 space-y-1">
-                  <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-blue-400 rounded"></div>
-                    <div className="w-2 h-2 bg-green-400 rounded"></div>
-                  </div>
-                  <div className="w-8 h-1 bg-gray-300 rounded"></div>
-                  <div className="w-6 h-1 bg-gray-300 rounded"></div>
-                </div>
-              </div>
-              <div className="absolute bottom-8 right-4">
-                <svg className="w-8 h-8 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-                </svg>
-              </div>
-            </div>
+           <Image src="/images/howitwork4.png" alt="Step 3" width={250} height={250} />
           </div>
         </div>
 
         {/* Step 4 */}
         <div className="flex flex-col items-start relative">
         <div className=" w-full flex justify-center">
-            <div className="relative w-32 h-32 mx-auto">
-              <div className="absolute top-4 left-8">
-                <div className="w-8 h-12 bg-gray-800 rounded-t-full"></div>
-                <div className="w-6 h-6 bg-pink-300 rounded-full mx-auto -mt-1"></div>
-                <div className="w-3 h-8 bg-gray-600 mx-auto"></div>
-                <div className="flex space-x-1 mt-1">
-                  <div className="w-2 h-4 bg-gray-800 rounded"></div>
-                  <div className="w-2 h-4 bg-gray-800 rounded"></div>
-                </div>
-              </div>
-              <div className="absolute bottom-8 right-4">
-                <div className="w-8 h-12 bg-indigo-900 rounded-t-full"></div>
-                <div className="w-6 h-6 bg-pink-300 rounded-full mx-auto -mt-1"></div>
-                <div className="w-3 h-8 bg-purple-600 mx-auto"></div>
-                <div className="flex space-x-1 mt-1">
-                  <div className="w-2 h-4 bg-indigo-900 rounded"></div>
-                  <div className="w-2 h-4 bg-indigo-900 rounded"></div>
-                </div>
-              </div>
-              <div className="absolute top-8 right-8 w-12 h-8 bg-gray-100 rounded border">
-                <div className="p-1">
-                  <div className="flex items-end space-x-1 h-4">
-                    <div className="w-1 h-2 bg-blue-400 rounded-t"></div>
-                    <div className="w-1 h-3 bg-green-400 rounded-t"></div>
-                    <div className="w-1 h-4 bg-purple-400 rounded-t"></div>
-                    <div className="w-1 h-1 bg-orange-400 rounded-t"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <Image src="/images/howitwork3.png" alt="Step 4" width={250} height={250}/>
           </div>
           <div className="flex mt-8 items-start w-full">
             <div className="flex-shrink-0 mr-6">
