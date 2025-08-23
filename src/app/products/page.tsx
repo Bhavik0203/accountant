@@ -13,34 +13,28 @@ import {
   Activity
 } from 'lucide-react';
 import AnimatedBeamDemo from '../components/animated-beam-demo';
+import bggg from '../../../public/group.png';
 import bg2 from '../../../public/images/bg1.png';
 import OurFeatures from '../components/ourfeatures';
 import TestimonialSection from '../components/testimonials';
 import HowItWorks from '../components/howitworks';
+import RegulatoryCompliance from '../components/regulatorycompliance';
+import SuccessStory from '../components/successstory';
+import Footer from '../components/footer';
+import StoryCounter from '../components/storycounter';
+import SecurityReliabilitySection from '../components/security';
 
 // Counter component for statistics
-const AnimatedCounter = ({ target, suffix, duration = 2000 }: { target: number, suffix: string, duration?: number }) => {
+const AnimatedCounter = ({ target, suffix, duration = 2000, shouldStart = false }: { target: number, suffix: string, duration?: number, shouldStart?: boolean }) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const counterRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    if (shouldStart && !isVisible) {
+      setIsVisible(true);
     }
-
-    return () => observer.disconnect();
-  }, [isVisible]);
+  }, [shouldStart, isVisible]);
 
   useEffect(() => {
     if (!isVisible) return;
@@ -86,6 +80,41 @@ const AnimatedCounter = ({ target, suffix, duration = 2000 }: { target: number, 
 };
 
 const ComplianceProductPage = () => {
+  const [isBlurred, setIsBlurred] = useState(false);
+  const [countersStarted, setCountersStarted] = useState(false);
+  const networkSectionRef = useRef<HTMLDivElement>(null);
+  const trustSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (networkSectionRef.current) {
+        const rect = networkSectionRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const sectionHeight = rect.height;
+        
+        // Calculate when user has scrolled 2/3 through the section
+        const scrollProgress = (windowHeight - rect.top) / (sectionHeight + windowHeight);
+        
+        if (scrollProgress >= 0.67) { // 2/3 = 0.67
+          setIsBlurred(true);
+        } else {
+          setIsBlurred(false);
+        }
+      }
+
+      // Check if trust section is visible to start counters
+      if (trustSectionRef.current && !countersStarted) {
+        const rect = trustSectionRef.current.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.8) { // When section is 80% visible
+          setCountersStarted(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [countersStarted]);
+
   const iconNodes = [
     { id: 1, icon: FileCheck, position: { x: 15, y: 40 }, color: 'bg-blue-500' },
     { id: 2, icon: Shield, position: { x: 35, y: 25 }, color: 'bg-teal-500' },
@@ -132,8 +161,10 @@ const ComplianceProductPage = () => {
         {/* <AnimatedBeamDemo/> */}
 
         {/* Network Visualization */}
-        <div className="relative">
-          <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl max-w-3xl mx-auto p-8 relative overflow-hidden min-h-[300px]">
+        <div className="relative" ref={networkSectionRef}>
+          <div className={`bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl max-w-3xl mx-auto p-8 relative overflow-hidden min-h-[300px] transition-all duration-500 ${
+            isBlurred ? 'blur-sm' : 'blur-none'
+          }`}>
             {/* Background pattern */}
            
             <AnimatedBeamDemo/>
@@ -141,7 +172,7 @@ const ComplianceProductPage = () => {
         </div>
       </div>
       {/* Trust by the numbers Section */}
-      <div className="max-w-6xl mx-auto px-4 pb-16">
+      <div className="max-w-6xl mx-auto px-4 pb-16" ref={trustSectionRef}>
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-12">
             Trust by the numbers
@@ -150,7 +181,7 @@ const ComplianceProductPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* First Statistic */}
             <div className="text-center">
-              <AnimatedCounter target={1000} suffix="+" />
+              <AnimatedCounter target={1000} suffix="+" shouldStart={countersStarted} />
               <div className="text-lg text-gray-600">
                 Hours Saved Annually
               </div>
@@ -158,7 +189,7 @@ const ComplianceProductPage = () => {
             
             {/* Second Statistic */}
             <div className="text-center">
-              <AnimatedCounter target={99.9} suffix="%" />
+              <AnimatedCounter target={99.9} suffix="%" shouldStart={countersStarted} />
               <div className="text-lg text-gray-600">
                 Deadline Accuracy
               </div>
@@ -166,7 +197,7 @@ const ComplianceProductPage = () => {
             
             {/* Third Statistic */}
             <div className="text-center">
-              <AnimatedCounter target={2000000} suffix=" +" />
+              <AnimatedCounter target={2000000} suffix=" +" shouldStart={countersStarted} />
               <div className="text-lg text-gray-600">
                 Hours Saved Annually
               </div>
@@ -179,7 +210,9 @@ const ComplianceProductPage = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="flex items-center justify-between mb-16">
-          <div className="flex-1 pr-12">
+          <div className={`flex-1 pr-12 transform transition-all duration-1000 ease-out ${
+            countersStarted ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+          }`}>
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
               Are you still buried in compliance paperwork?
             </h1>
@@ -194,7 +227,9 @@ const ComplianceProductPage = () => {
           </div>
           
           {/* Illustration */}
-          <div className="w-80">
+          <div className={`w-80 transform transition-all duration-1000 ease-out delay-300 ${
+            countersStarted ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+          }`}>
             <Image 
               src="/images/questions_g.png"
               alt="Compliance Inbox"
@@ -208,7 +243,9 @@ const ComplianceProductPage = () => {
         {/* Solution Section */}
         <div className="flex items-center space-x-12 ">
           {/* Solution Card */}
-          <div className="w-80">
+          <div className={`w-80 transform transition-all duration-1000 ease-out delay-500 ${
+            countersStarted ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+          }`}>
             <Image 
               src="/images/undraw.png"
               alt="Compliance Inbox"
@@ -219,7 +256,9 @@ const ComplianceProductPage = () => {
           </div>
 
           {/* Solution Description */}
-          <div className="flex-1">
+          <div className={`flex-1 transform transition-all duration-1000 ease-out delay-700 ${
+            countersStarted ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+          }`}>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               The Compliance Inbox Solution
             </h2>
@@ -237,7 +276,30 @@ const ComplianceProductPage = () => {
     </div>
     <OurFeatures/>
     <HowItWorks/>
-    <TestimonialSection/>
+    <RegulatoryCompliance/>
+    <SuccessStory/>
+    <section className=" bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bggg.src})` }}>
+      
+      <StoryCounter/>
+      <SecurityReliabilitySection/>
+     
+     <div className=" py-20 px-8">
+       <div className="max-w-4xl mx-auto text-center">
+         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+           Ready to transform your compliance?
+         </h2>
+         <p className="text-xl text-white mb-10 max-w-3xl mx-auto">
+           Join thousands of firms who have revolutionized their compliance processes with Compliance Inbox
+         </p>
+         <button className="bg-white text-blue-600 border border-blue-300 rounded-lg px-8 py-4 text-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
+           Book A Demo
+         </button>
+       </div>
+     </div>
+      <div>
+        <Footer/>
+      </div>
+    </section>
     </div>
   );
 };

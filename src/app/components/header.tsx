@@ -298,7 +298,8 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center cursor-pointer">
+            <a 
+                href="/" className="flex items-center cursor-pointer">
               <Image 
                 src={logo} 
                 alt="Accountant Tech Lab Logo" 
@@ -306,7 +307,7 @@ const Header = () => {
                 height={46} 
                 className="h-14 w-auto" 
               />
-            </div>
+            </a>
             
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-0">

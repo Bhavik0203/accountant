@@ -1,23 +1,23 @@
 import Image from 'next/image';
 
 // Import your logo images - adjust paths according to your project structure
-import dubaiLogo from '';
-import uaeLogo from '/public/logos/uae-ministry.png';
-import adgmLogo from '/public/logos/adgm.png';
-import gaapLogo from '/public/logos/gaap.png';
-import ifrsLogo from '/public/logos/ifrs.png';
-import aicdaLogo from '/public/logos/aicda.png';
-import iso27001Logo from '/public/logos/iso27001.png';
-import hipaaLogo from '/public/logos/hipaa.png';
-import gdprLogo from '/public/logos/gdpr.png';
-import amlLogo from '/public/logos/aml.png';
-import santanderLogo from '/public/logos/santander.png';
-import esrLogo from '/public/logos/esr.png';
-import euAmlLogo from '/public/logos/eu-aml.png';
+import dubaiLogo from '../../../public/images/reginal.png';
+import uaeLogo from '../../../public/images/reginal1.png';
+import adgmLogo from '../../../public/images/reginal2.png';
+import gaapLogo from '../../../public/images/accounting1.png';
+import ifrsLogo from '../../../public/images/accounting2.png';
+import aicdaLogo from '../../../public/images/international1.png';
+import iso27001Logo from '../../../public/images/international2.png';
+import hipaaLogo from '../../../public/images/international3.png';
+import gdprLogo from '../../../public/images/international4.png';
+import amlLogo from '../../../public/images/banking1.png';
+import santanderLogo from '../../../public/images/banking2.png';
+import esrLogo from '../../../public/images/banking3.png';
+import euAmlLogo from '../../../public/images/banking4.png';
 
 const RegulatoryCompliance = () => {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12">
+    <div className="max-w-6xl mx-auto px-6 pt-12 pb-20">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -32,58 +32,31 @@ const RegulatoryCompliance = () => {
       {/* Compliance Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Regional Compliance */}
-        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100">
+        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100 shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]">
           <h2 className="text-xl font-semibold text-gray-900 mb-6">Regional Compliance</h2>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                <Image 
-                  src={dubaiLogo} 
-                  alt="Dubai International Financial Centre" 
-                  width={48} 
-                  height={48}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                <Image 
-                  src={uaeLogo} 
-                  alt="UAE Ministry" 
-                  width={48} 
-                  height={48}
-                  className="object-contain"
-                />
-              </div>
+          <div className="flex items-center justify-center space-x-6">
+            <div className="w-20 h-16  rounded-lg flex items-center justify-center  p-2">
+              <Image 
+                src={dubaiLogo} 
+                alt="Dubai International Financial Centre" 
+                width={64} 
+                height={48}
+                className="object-contain"
+              />
             </div>
-            <div className="w-20 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-20 h-16  rounded-lg flex items-center justify-center  p-2">
+              <Image 
+                src={uaeLogo} 
+                alt="UAE Ministry" 
+                width={64} 
+                height={48}
+                className="object-contain"
+              />
+            </div>
+            <div className="w-24 h-16  rounded-lg flex items-center justify-center  p-2">
               <Image 
                 src={adgmLogo} 
                 alt="ADGM" 
-                width={64} 
-                height={48}
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Accounting Standards */}
-        <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">Accounting Standards</h2>
-          <div className="flex items-center justify-between">
-            <div className="w-20 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
-              <Image 
-                src={gaapLogo} 
-                alt="GAAP" 
-                width={64} 
-                height={48}
-                className="object-contain"
-              />
-            </div>
-            <div className="w-24 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
-              <Image 
-                src={ifrsLogo} 
-                alt="IFRS" 
                 width={80} 
                 height={48}
                 className="object-contain"
@@ -92,42 +65,68 @@ const RegulatoryCompliance = () => {
           </div>
         </div>
 
+        {/* Accounting Standards */}
+        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100 shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6">Accounting Standards</h2>
+          <div className="flex items-center justify-center space-x-6">
+            <div className="w-24 h-16  rounded-lg flex items-center justify-center  p-2">
+              <Image 
+                src={gaapLogo} 
+                alt="GAAP" 
+                width={80} 
+                height={48}
+                className="object-contain"
+              />
+            </div>
+            <div className="w-28 h-16 rounded-lg flex items-center justify-center  p-2">
+              <Image 
+                src="/images/accounting2.png" 
+                alt="IFRS" 
+                width={96} 
+                height={48}
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+
         {/* International Standards */}
-        <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 border border-green-100">
+        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100 shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]">
           <h2 className="text-xl font-semibold text-gray-900 mb-6">International Standards</h2>
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+          <div className="flex gap-4 items-center justify-center">
+            <div className="w-20 h-16 rounded-full flex items-center justify-center  p-2">
               <Image 
                 src={aicdaLogo} 
                 alt="AICDA" 
-                width={48} 
+                width={64} 
                 height={48}
                 className="object-contain"
               />
             </div>
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+            <div className="w-20 h-16  rounded-full flex items-center justify-center  p-2">
               <Image 
                 src={iso27001Logo} 
                 alt="ISO 27001" 
-                width={48} 
+                width={64} 
                 height={48}
                 className="object-contain"
               />
             </div>
-            <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-20 h-16  rounded-lg flex items-center justify-center  p-2">
               <Image 
                 src={hipaaLogo} 
                 alt="HIPAA" 
-                width={48} 
+                width={64} 
                 height={48}
                 className="object-contain"
               />
             </div>
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+            <div className="w-20 h-16  rounded-full flex items-center justify-center  p-2">
               <Image 
                 src={gdprLogo} 
                 alt="GDPR" 
-                width={48} 
+                width={64} 
                 height={48}
                 className="object-contain"
               />
@@ -136,41 +135,41 @@ const RegulatoryCompliance = () => {
         </div>
 
         {/* Financial & Banking Compliance */}
-        <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-orange-100">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">Financial & Banking Compliance</h2>
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100 shadow-[inset_0_4px_8px_rgba(0,0,0,0.1)]">
+         <h2 className="text-xl font-semibold text-gray-900 mb-6">Financial & Banking Compliance</h2>
+          <div className="flex gap-4 items-center justify-center">
+            <div className="w-20 h-16 rounded-full flex items-center justify-center  p-2">
               <Image 
                 src={amlLogo} 
                 alt="AML" 
-                width={48} 
+                width={64} 
                 height={48}
                 className="object-contain"
               />
             </div>
-            <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-20 h-16  rounded-lg flex items-center justify-center  p-2">
               <Image 
                 src={santanderLogo} 
                 alt="Santander" 
-                width={48} 
+                width={64} 
                 height={48}
                 className="object-contain"
               />
             </div>
-            <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-20 h-16  rounded-lg flex items-center justify-center  p-2">
               <Image 
                 src={esrLogo} 
                 alt="ESR" 
-                width={48} 
+                width={64} 
                 height={48}
                 className="object-contain"
               />
             </div>
-            <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-20 h-16  rounded-lg flex items-center justify-center  p-2">
               <Image 
                 src={euAmlLogo} 
                 alt="EU AML" 
-                width={48} 
+                width={64} 
                 height={48}
                 className="object-contain"
               />

@@ -72,10 +72,10 @@ export default function TestimonialSection() {
 
   return (
     <div 
-      ref={sectionRef}
-      className="px-4 py-10 relative overflow-hidden shadow-2xl bg-white" 
-      style={{ borderRadius: '160px 160px 0 0' }}
-    >
+    ref={sectionRef}
+    className="px-4 py-10 relative overflow-hidden bg-white" 
+    style={{ borderRadius: '160px 160px 0 0' }}
+  >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div 
