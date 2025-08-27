@@ -4,6 +4,11 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Menu, X, ChevronUp, Plus, Users, FileText, TrendingUp, Settings, Users2, Hexagon, Grid, BarChart3 } from 'lucide-react';
 import logo from '../../../public/images/logo.png';
+import ciIcon from '../../../public/images/Ci.png';
+import aiIcon from '../../../public/images/ai.png';
+import fiIcon from '../../../public/images/Fi.png';
+import ci1Icon from '../../../public/images/ci1.png';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,261 +34,244 @@ const Header = () => {
   };
 
   const navigationItems = [
+    {
+      name:"ABOUT US",
+      link:"/about-us"
+    },
     { 
       name: 'PRODUCTS', 
+      link: "/products",
       hasPlus: true,
       dropdown: {
-        title: "Effortel Mobile Suite (EMS)",
-        subtitle: "The command center for your MVNO",
-        metrics: [
-          {
-            icon: <Users className="h-5 w-5 text-green-400" />,
-            value: "120 547",
-            label: "TOTAL USERS",
-            change: "+3.2%",
-            trend: "up",
-            color: "green"
-          },
-          {
-            icon: <FileText className="h-5 w-5 text-blue-400" />,
-            value: "112 355",
-            label: "ONGOING BILLING",
-            change: "+2.2%",
-            trend: "up",
-            color: "blue"
-          }
-        ],
+        title: "Accounting & Audit Suite",
+        subtitle: "Comprehensive financial management and compliance solutions",
+        
         features: [
           {
-            icon: <div className="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Real-Time Service Management",
-            color: "pink"
-          },
-          {
-            icon: <Settings className="h-5 w-5 text-green-400" />,
-            title: "Third-Party Integration",
-            color: "green"
-          },
-          {
-            icon: <Users2 className="h-5 w-5 text-blue-400" />,
-            title: "Customer Management",
+            icon: <Image src={ciIcon} alt="Compliance iNBOX" width={32} height={32} className="object-contain" />,
+            title: "Compliance iNBOX",
+            link: "/compliance-inbox",
             color: "blue"
           },
           {
-            icon: <Hexagon className="h-5 w-5 text-purple-400" />,
-            title: "Product & Resource Management",
+            icon: <Image src={aiIcon} alt="Analytics iNBOX" width={32} height={32} className="object-contain" />,
+            title: "Analytics iNBOX",
+            link: "/analytics-inbox",
+            color: "green"
+          },
+          {
+            icon: <Image src={fiIcon} alt="Financial iNBOX" width={32} height={32} className="object-contain" />,
+            title: "Financial iNBOX",
+            link: "/financial-inbox",
             color: "purple"
           },
           {
-            icon: <Grid className="h-5 w-5 text-blue-400" />,
-            title: "Effortel Spotlight",
-            subtitle: "Real-Time Analytics and Insights",
-            color: "blue",
-            large: true
-          }
+              icon: <Image src={ciIcon} alt="Audit Flow iNBOX" width={32} height={32} className="object-contain" />,
+              title: "Audit Flow iNBOX",
+              link: "/audit-flow-inbox",
+              color: "orange"
+            }
         ]
       }
     },
-    { 
-      name: 'SOLUTIONS', 
-      hasPlus: true,
-      dropdown: {
-        title: "Enterprise Solutions",
-        subtitle: "Comprehensive business solutions",
-        metrics: [
-          {
-            icon: <TrendingUp className="h-5 w-5 text-green-400" />,
-            value: "98.5%",
-            label: "UPTIME",
-            change: "+0.5%",
-            trend: "up",
-            color: "green"
-          },
-          {
-            icon: <BarChart3 className="h-5 w-5 text-blue-400" />,
-            value: "45 892",
-            label: "ACTIVE SESSIONS",
-            change: "+12.3%",
-            trend: "up",
-            color: "blue"
-          }
-        ],
-        features: [
-          {
-            icon: <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Cloud Infrastructure",
-            color: "blue"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Security & Compliance",
-            color: "green"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Data Analytics",
-            color: "purple"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "API Management",
-            color: "orange"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Integration Hub",
-            subtitle: "Connect all your systems",
-            color: "indigo",
-            large: true
-          }
-        ]
-      }
-    },
-    { 
-      name: 'RESOURCES', 
-      hasPlus: true,
-      dropdown: {
-        title: "Knowledge Center",
-        subtitle: "Everything you need to succeed",
-        metrics: [
-          {
-            icon: <FileText className="h-5 w-5 text-blue-400" />,
-            value: "2,847",
-            label: "ARTICLES",
-            change: "+156",
-            trend: "up",
-            color: "blue"
-          },
-          {
-            icon: <Users className="h-5 w-5 text-green-400" />,
-            value: "89.2%",
-            label: "SATISFACTION",
-            change: "+2.1%",
-            trend: "up",
-            color: "green"
-          }
-        ],
-        features: [
-          {
-            icon: <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Documentation",
-            color: "blue"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Video Tutorials",
-            color: "green"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Webinars",
-            color: "purple"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Case Studies",
-            color: "orange"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Community Forum",
-            subtitle: "Connect with experts",
-            color: "indigo",
-            large: true
-          }
-        ]
-      }
-    },
+    // { 
+    //   name: 'SOLUTIONS', 
+    //   hasPlus: true,
+    //   dropdown: {
+    //     title: "Enterprise Solutions",
+    //     subtitle: "Comprehensive business solutions",
+        
+    //     features: [
+    //       {
+    //         icon: <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "Cloud Infrastructure",
+    //         color: "blue"
+    //       },
+    //       {
+    //         icon: <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "Security & Compliance",
+    //         color: "green"
+    //       },
+    //       {
+    //         icon: <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "Data Analytics",
+    //         color: "purple"
+    //       },
+    //       {
+    //         icon: <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "API Management",
+    //         color: "orange"
+    //       },
+    //       {
+    //         icon: <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "Integration Hub",
+    //         subtitle: "Connect all your systems",
+    //         color: "indigo",
+    //         large: true
+    //       }
+    //     ]
+    //   }
+    // },
+    // { 
+    //   name: 'RESOURCES', 
+    //   hasPlus: true,
+    //   dropdown: {
+    //     title: "Knowledge Center",
+    //     subtitle: "Everything you need to succeed",
+        
+    //     features: [
+    //       {
+    //         icon: <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "Documentation",
+    //         color: "blue"
+    //       },
+    //       {
+    //         icon: <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "Video Tutorials",
+    //         color: "green"
+    //       },
+    //       {
+    //         icon: <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "Webinars",
+    //         color: "purple"
+    //       },
+    //       {
+    //         icon: <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "Case Studies",
+    //         color: "orange"
+    //       },
+    //       {
+    //         icon: <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+    //           <div className="w-4 h-4 bg-white rounded-sm"></div>
+    //         </div>,
+    //         title: "Community Forum",
+    //         subtitle: "Connect with experts",
+    //         color: "indigo",
+    //         large: true
+    //       }
+    //     ]
+    //   }
+    // },
     { 
       name: 'SERVICES', 
-      hasPlus: false 
+      link: "/services",
+      hasPlus: true,
+      dropdown: {
+        title: "Professional Services",
+        subtitle: "Expert support and consulting",
+       
+        features: [
+          {
+            icon: <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+              <div className="w-4 h-4 bg-white rounded-sm"></div>
+            </div>,
+            title: "Implementation Support",
+            color: "blue"
+          },
+          {
+            icon: <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+              <div className="w-4 h-4 bg-white rounded-sm"></div>
+            </div>,
+            title: "Training & Workshops",
+            color: "green"
+          },
+          {
+            icon: <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+              <div className="w-4 h-4 bg-white rounded-sm"></div>
+            </div>,
+            title: "24/7 Support",
+            color: "purple"
+          },
+          {
+            icon: <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+              <div className="w-4 h-4 bg-white rounded-sm"></div>
+            </div>,
+            title: "Custom Development",
+            color: "orange"
+          },
+          {
+            icon: <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+              <div className="w-4 h-4 bg-white rounded-sm"></div>
+            </div>,
+            title: "Strategic Consulting",
+            subtitle: "Expert guidance for your business",
+            color: "indigo",
+            large: true
+          }
+        ]
+      }
     },
+    {
+      name:"CONTACT US",
+      link:"/contact-us"
+    }
   ];
 
-  const DropdownContent = ({ item }: { item: any }) => {
+  const DropdownContent = ({ item, isBottomNav = false }: { item: any; isBottomNav?: boolean }) => {
     if (!item.dropdown) return null;
 
     return (
-      <div className="absolute top-full left-0 mt-2 w-[800px] bg-gray-900 rounded-xl shadow-2xl border border-gray-700 p-6 z-50">
-        <div className="grid grid-cols-2 gap-6">
-          {/* Left Section - Title and Metrics */}
-          <div className="space-y-4">
-            <div>
+      <div 
+        className={`absolute ${isBottomNav ? 'bottom-full mb-2 ' : 'top-full mt-2'} left-0 right-0 w-full bg-gray-900 rounded-xl shadow-2xl border border-gray-700 p-6 z-50`}
+        onMouseEnter={() => setHoveredItem(item.name)}
+        onMouseLeave={() => setHoveredItem(null)}
+      >
+         <div>
               <h3 className="text-xl font-bold text-white mb-1">{item.dropdown.title}</h3>
               <p className="text-gray-400 text-sm">{item.dropdown.subtitle}</p>
             </div>
-            
-            {/* Metrics Cards */}
-            <div className="space-y-3">
-              {item.dropdown.metrics.map((metric: any, index: number) => (
-                <div key={index} className="bg-gray-800 rounded-lg p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    {metric.icon}
-                    <div className="flex items-center space-x-1">
-                      <span className={`text-${metric.color}-400 text-sm font-medium`}>
-                        {metric.change}
-                      </span>
-                      <div className={`w-2 h-2 bg-${metric.color}-400 rounded-full`}></div>
-                    </div>
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
-                  <div className="text-gray-400 text-xs">{metric.label}</div>
-                  {metric.label === "ONGOING BILLING" && (
-                    <div className="mt-2">
-                      <div className="text-gray-400 text-xs mb-1">HEAP MEMORY</div>
-                      <div className="w-full bg-gray-700 rounded-full h-2">
-                        <div className="bg-blue-400 h-2 rounded-full" style={{ width: '63%' }}></div>
+        <div className=" gap-6 mt-4">
+          {/* Left Section - Title and Metrics */}
+          
+          {/* Right Section - Features Grid */}
+                      <div className="grid grid-cols-4 gap-3">
+              {item.dropdown.features.map((feature: any, index: number) => (
+                feature.link ? (
+                  <Link key={index} href={feature.link}>
+                    <div 
+                    className="bg-gray-800 rounded-lg p-4 cursor-pointer hover:bg-gray-700 transition-colors"
+                  >
+                    <div className="flex flex-col items-center text-center space-y-3">
+                      {feature.icon}
+                      <div>
+                        <div className="text-white font-medium text-sm">{feature.title}</div>
                       </div>
                     </div>
-                  )}
-                </div>
+                  </div>
+                  </Link>
+                ) : (
+                  <div 
+                    key={index}
+                    className="bg-gray-800 rounded-lg p-4 cursor-pointer hover:bg-gray-700 transition-colors"
+                  >
+                    <div className="flex flex-col items-center text-center space-y-3">
+                      {feature.icon}
+                      <div>
+                        <div className="text-white font-medium text-sm">{feature.title}</div>
+                      </div>
+                    </div>
+                  </div>
+                )
               ))}
             </div>
-          </div>
-
-          {/* Right Section - Features Grid */}
-          <div className="grid grid-cols-2 gap-3">
-            {item.dropdown.features.map((feature: any, index: number) => (
-              <div 
-                key={index} 
-                className={`bg-gray-800 rounded-lg p-4 cursor-pointer hover:bg-gray-700 transition-colors ${
-                  feature.large ? 'col-span-2' : ''
-                }`}
-              >
-                <div className="flex items-start space-x-3">
-                  {feature.icon}
-                  <div>
-                    <div className="text-white font-medium text-sm">{feature.title}</div>
-                    {feature.subtitle && (
-                      <div className="text-gray-400 text-xs mt-1">{feature.subtitle}</div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     );
@@ -298,7 +286,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <a 
+            <Link 
                 href="/" className="flex items-center cursor-pointer">
               <Image 
                 src={logo} 
@@ -307,50 +295,43 @@ const Header = () => {
                 height={46} 
                 className="h-14 w-auto" 
               />
-            </a>
+            </Link>
             
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-0">
-              <a 
-                href="about" 
-                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
-              >
-                About Us
-              </a>
-              <div className="w-px h-6 bg-gray-300"></div>
-              <a 
-                href="products" 
-                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
-              >
-                Products
-              </a>
-              <div className="w-px h-6 bg-gray-300"></div>
-              <a 
-                href="solutions" 
-                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
-              >
-                Solutions
-              </a>
-              <div className="w-px h-6 bg-gray-300"></div>
-              <a 
-                href="#features" 
-                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
-              >
-                Features
-              </a>
-              <div className="w-px h-6 bg-gray-300"></div>
-              <a 
-                href="#contact" 
-                className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium"
-              >
-                Contact Us
-              </a>
+            <nav className="hidden md:flex items-center space-x-0 relative">
+              {navigationItems.map((item, index) => (
+                <React.Fragment key={item.name}>
+                  <div 
+                    className="relative"
+                    onMouseEnter={() => setHoveredItem(item.name)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                  >
+                    <Link href={item.link}>
+                    <button className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium flex items-center space-x-1">
+                      <span>{item.name}</span>
+                      {item.hasPlus && <Plus className="h-3 w-3" />}
+                    </button>
+                    </Link>
+                  </div>
+                  {index < navigationItems.length - 1 && (
+                    <div className="w-px h-6 bg-gray-300"></div>
+                  )}
+                </React.Fragment>
+              ))}
+              
+              {/* Centralized Dropdown */}
+              {hoveredItem && navigationItems.find(item => item.name === hoveredItem)?.dropdown && (
+                <DropdownContent 
+                  item={navigationItems.find(item => item.name === hoveredItem)!} 
+                  isBottomNav={false} 
+                />
+              )}
             </nav>
             
             {/* CTA Button */}
             <div className="hidden md:block">
               <button className="border-2 cursor-pointer border-blue-900 text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-200 font-medium">
-                Book A Demo
+                BOOK A MEETING
               </button>
             </div>
 
@@ -374,44 +355,22 @@ const Header = () => {
           {isMobileMenuOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-                <a
-                  href="#about"
-                  className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors font-medium"
-                  onClick={closeMobileMenu}
-                >
-                  About Us
-                </a>
-                <a
-                  href="#products"
-                  className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors font-medium"
-                  onClick={closeMobileMenu}
-                >
-                  Products
-                </a>
-                <a
-                  href="#solutions"
-                  className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors font-medium"
-                  onClick={closeMobileMenu}
-                >
-                  Solutions
-                </a>
-                <a
-                  href="#features"
-                  className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors font-medium"
-                  onClick={closeMobileMenu}
-                >
-                  Features
-                </a>
-                <a
-                  href="#contact"
-                  className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors font-medium"
-                  onClick={closeMobileMenu}
-                >
-                  Contact Us
-                </a>
+                {navigationItems.map((item) => (
+                  <div key={item.name}>
+                    <Link href={item.link}>
+                    <button
+                      className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors font-medium flex items-center justify-between"
+                      onClick={closeMobileMenu}
+                    >
+                      <span>{item.name}</span>
+                      {item.hasPlus && <Plus className="h-3 w-3" />}
+                    </button>
+                    </Link>
+                  </div>
+                ))}
                 <div className="pt-4">
                   <button className="w-full border-2 cursor-pointer border-blue-900 text-blue-900 px-6 py-3 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-200 font-medium">
-                    Book A Demo
+                    BOOK A MEETING
                   </button>
                 </div>
               </div>
@@ -424,7 +383,7 @@ const Header = () => {
       <div className={`fixed bottom-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}>
-        <div className=" max-w-2xl bg-black/20 backdrop-blur-lg rounded-lg mx-auto mb-4 shadow-lg">
+        <div className="max-w-2xl bg-black/20 backdrop-blur-lg rounded-lg mx-auto mb-4 shadow-lg relative">
           <div className="flex items-center justify-center space-x-1 p-2">
             {/* Up arrow button */}
             <button 
@@ -436,34 +395,39 @@ const Header = () => {
             </button>
 
             {/* Navigation items */}
-            {navigationItems.map((item, index) => (
-              <React.Fragment key={item.name}>
-                <div 
-                  className="relative"
-                  onMouseEnter={() => setHoveredItem(item.name)}
-                  onMouseLeave={() => setHoveredItem(null)}
-                >
-                  <button className="bg-white cursor-pointer hover:bg-gray-600 hover:text-white text-[#303030] px-3 py-2 rounded-md transition-colors font-mono text-sm flex items-center space-x-1">
-                    <span>{item.name}</span>
-                    {item.hasPlus && <Plus className="h-3 w-3 text-white" />}
-                  </button>
-                  
-                  {/* Dropdown */}
-                  {hoveredItem === item.name && item.dropdown && (
-                    <DropdownContent item={item} />
+            <div className="flex items-center justify-center space-x-1">
+              {navigationItems.map((item, index) => (
+                <React.Fragment key={item.name}>
+                  <div 
+                    className="relative"
+                    onMouseEnter={() => setHoveredItem(item.name)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                  >
+                    <button className="bg-white cursor-pointer hover:bg-gray-600 hover:text-white text-[#303030] px-3 py-2 rounded-md transition-colors font-mono text-sm flex items-center space-x-1">
+                      <span>{item.name}</span>
+                      {item.hasPlus && <Plus className="h-3 w-3 text-white" />}
+                    </button>
+                  </div>
+                  {index < navigationItems.length - 1 && (
+                    <div className="w-px h-6 bg-gray-600"></div>
                   )}
-                </div>
-                {index < navigationItems.length - 1 && (
-                  <div className="w-px h-6 bg-gray-600"></div>
-                )}
-              </React.Fragment>
-            ))}
+                </React.Fragment>
+              ))}
+            </div>
 
             {/* CTA Button */}
             <button className="border-2 cursor-pointer  border-blue-900 bg-white text-blue-900 px-4 py-2 rounded-md transition-colors font-mono text-sm font-medium">
               BOOK A MEETING
             </button>
           </div>
+          
+          {/* Centralized Dropdown - positioned relative to the main card */}
+          {hoveredItem && navigationItems.find(item => item.name === hoveredItem)?.dropdown && (
+            <DropdownContent 
+              item={navigationItems.find(item => item.name === hoveredItem)!} 
+              isBottomNav={true} 
+            />
+          )}
         </div>
       </div>
     </>

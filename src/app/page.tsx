@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ChevronDown, Building2, BarChart3, Shield, TrendingUp } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Header from "./components/header";
 
 import bgImage from '../../public/images/main-banner.png';
@@ -77,6 +77,8 @@ export default function Home() {
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const [focusedCard, setFocusedCard] = useState<number | null>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -101,18 +103,35 @@ export default function Home() {
       observer.observe(element);
     });
 
-    // Also observe the specific refs for text and image
-    if (textRef.current) {
-      observer.observe(textRef.current);
-    }
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
-    }
-    if (cardsRef.current) {
-      observer.observe(cardsRef.current);
-    }
-
     return () => observer.disconnect();
+  }, []);
+
+  // Focus/blur observer for cards
+  useEffect(() => {
+    const focusObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const cardIndex = parseInt(entry.target.getAttribute('data-card-index') || '0');
+          
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            setFocusedCard(cardIndex);
+          }
+        });
+      },
+      { 
+        threshold: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+        rootMargin: '-15% 0px -15% 0px'
+      }
+    );
+
+    // Observe all card elements
+    cardRefs.current.forEach((cardRef) => {
+      if (cardRef) {
+        focusObserver.observe(cardRef);
+      }
+    });
+
+    return () => focusObserver.disconnect();
   }, []);
 
   return (
@@ -223,11 +242,22 @@ export default function Home() {
             ref={cardsRef}
             className="relative lg:col-span-2 animate-slide-up animate-slide-up-fallback"
           >
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 gap-20">
               
               {/* Top Right Card */}
-              <div className="ml-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" style={{ animationDelay: '0.1s' }}>
-                <div className="relative ml-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div 
+                ref={(el) => { cardRefs.current[0] = el; }}
+                data-card-index="0"
+                className="ml-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" 
+                style={{ animationDelay: '0.1s' }}
+              >
+                <div className={`relative ml-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-all duration-700 ease-in-out ${
+                  focusedCard === 0 
+                    ? 'transform scale-105 shadow-2xl bg-blue-100 z-10' 
+                    : focusedCard !== null 
+                      ? 'filter blur-[2px] opacity-70 transform scale-95' 
+                      : 'transform scale-100'
+                }`}>
                   <div className="mb-4">
                     <h3 className="text-[20px] font-bold text-gray-800 mb-2">
                       Unified Platform
@@ -245,8 +275,19 @@ export default function Home() {
               </div>
 
               {/* Middle Left Card */}
-              <div className="mr-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" style={{ animationDelay: '0.2s' }}>
-                <div className="relative mr-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div 
+                ref={(el) => { cardRefs.current[1] = el; }}
+                data-card-index="1"
+                className="mr-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" 
+                style={{ animationDelay: '0.2s' }}
+              >
+                <div className={`relative mr-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-all duration-700 ease-in-out ${
+                  focusedCard === 1 
+                    ? 'transform scale-105 shadow-2xl bg-blue-100 z-10' 
+                    : focusedCard !== null 
+                      ? 'filter blur-[2px] opacity-70 transform scale-95' 
+                      : 'transform scale-100'
+                }`}>
                   <div className="mb-4">
                     <h3 className="text-[20px] font-bold text-gray-800 mb-2">
                      Built for Finance Professionals
@@ -264,8 +305,19 @@ export default function Home() {
               </div>
 
               {/* Bottom Right Card */}
-              <div className="ml-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" style={{ animationDelay: '0.3s' }}>
-                <div className="relative ml-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div 
+                ref={(el) => { cardRefs.current[2] = el; }}
+                data-card-index="2"
+                className="ml-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" 
+                style={{ animationDelay: '0.3s' }}
+              >
+                <div className={`relative ml-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-all duration-700 ease-in-out ${
+                  focusedCard === 2 
+                    ? 'transform scale-105 shadow-2xl bg-blue-100 z-10' 
+                    : focusedCard !== null 
+                      ? 'filter blur-[2px] opacity-70 transform scale-95' 
+                      : 'transform scale-100'
+                }`}>
                   <div className="mb-4">
                     <h3 className="text-[20px] font-bold text-gray-800 mb-2">
                    Secure & Compliant
@@ -283,8 +335,19 @@ export default function Home() {
               </div>
 
               {/* Bottom Left Card */}
-              <div className="mr-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" style={{ animationDelay: '0.4s' }}>
-                <div className="relative mr-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div 
+                ref={(el) => { cardRefs.current[3] = el; }}
+                data-card-index="3"
+                className="mr-auto w-full max-w-sm mt-[-30px] animate-slide-up-staggered animate-slide-up-staggered-fallback" 
+                style={{ animationDelay: '0.4s' }}
+              >
+                <div className={`relative mr-6 cursor-pointer bg-blue-50 hover:bg-blue-100 rounded-2xl h-[166px] w-[360px] shadow-lg p-6 hover:shadow-xl transition-all duration-700 ease-in-out ${
+                  focusedCard === 3 
+                    ? 'transform scale-105 shadow-2xl bg-blue-100 z-10' 
+                    : focusedCard !== null 
+                      ? 'filter blur-[2px] opacity-70 transform scale-95' 
+                      : 'transform scale-100'
+                }`}>
                   <div className="mb-4">
                     <h3 className="text-[20px] font-bold text-gray-800 mb-2">
                        Scalable for All Firm Sizes

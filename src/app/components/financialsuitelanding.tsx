@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronRight, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import secimage2 from '../../../public/images/Rectangle 1.png';
 import bg2 from '../../../public/images/bg2.png';
 
@@ -112,31 +112,64 @@ const FinancialSuiteLanding = () => {
         <div className="w-1/2">
           <div className="max-w-4xl">
             {/* Main Feature Section */}
-            <div className=" rounded-3xl  overflow-hidden ">
-              {/* Header */}
-              <div className="px-10 pb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                  {currentTool.name}
-                </h3>
-                
-                {/* Interactive Demo Area */}
-              <div>
-                <Image src={currentTool.image} alt={currentTool.name} width={1000} height={1000} />
-              </div>
-              </div>
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={selectedTool}
+                className=" rounded-3xl  overflow-hidden "
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -30, opacity: 0 }}
+                transition={{ 
+                  duration: 0.2, 
+                  ease: "easeOut"
+                }}
+              >
+                {/* Header */}
+                <div className="px-10 pb-8">
+                  <motion.h3 
+                    className="text-3xl font-bold text-gray-900 mb-4"
+                    initial={{ y: 15, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.05, duration: 0.15 }}
+                  >
+                    {currentTool.name}
+                  </motion.h3>
+                  
+                  {/* Interactive Demo Area */}
+                  <motion.div
+                    initial={{ y: 15, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.1, duration: 0.15 }}
+                  >
+                    <Image src={currentTool.image} alt={currentTool.name} width={1000} height={1000} />
+                  </motion.div>
+                </div>
 
-              {/* Description */}
-              <div className="px-10 pb-10">
-                <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-                  {currentTool.description}
-                </p>
-                
-                <button className="inline-flex  cursor-pointer items-center space-x-3 text-blue-600 hover:text-blue-700 font-semibold transition-colors group border-2 border-blue-600 rounded-xl px-6 py-3 hover:bg-blue-50 hover:shadow-md">
-                  <span>Learn More</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </div>
+                {/* Description */}
+                <div className="px-10 pb-10">
+                  <motion.p 
+                    className="text-gray-600 mb-8 leading-relaxed text-lg"
+                    initial={{ y: 15, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.15, duration: 0.15 }}
+                  >
+                    {currentTool.description}
+                  </motion.p>
+                  
+                  <motion.button 
+                    className="inline-flex  cursor-pointer items-center space-x-3 text-blue-600 hover:text-blue-700 font-semibold transition-colors group border-2 border-blue-600 rounded-xl px-6 py-3 hover:bg-blue-50 hover:shadow-md"
+                    initial={{ y: 15, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.2, duration: 0.15 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span>Learn More</span>
+                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </motion.button>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

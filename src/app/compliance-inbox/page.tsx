@@ -15,9 +15,9 @@ import {
 import AnimatedBeamDemo from '../components/animated-beam-demo';
 import bggg from '../../../public/group.png';
 import bg2 from '../../../public/images/bg1.png';
-import OurFeatures from '../components/ourfeatures';
+import OurFeatures from '../components/ciourfeatures';
 import TestimonialSection from '../components/testimonials';
-import HowItWorks from '../components/howitworks';
+import HowItWorks from '../components/cihowitworks';
 import RegulatoryCompliance from '../components/regulatorycompliance';
 import SuccessStory from '../components/successstory';
 import Footer from '../components/footer';
@@ -143,7 +143,7 @@ const ComplianceProductPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto px-2 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Compliance, Automated. Growth, Accelerated
@@ -172,7 +172,7 @@ const ComplianceProductPage = () => {
         </div>
       </div>
       {/* Trust by the numbers Section */}
-      <div className="max-w-6xl mx-auto px-4 pb-16" ref={trustSectionRef}>
+      <div className="max-w-6xl mx-auto px-2 pb-16" ref={trustSectionRef}>
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-12">
             Trust by the numbers
@@ -205,12 +205,12 @@ const ComplianceProductPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-cover bg-center bg-no-repeat p-8" style={{ backgroundImage: `url(${bg2.src})` }}>
+      <div className="bg-cover bg-center bg-no-repeat p-4" style={{ backgroundImage: `url(${bg2.src})` }}>
     
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-2">
         {/* Header Section */}
         <div className="flex items-center justify-between mb-16">
-          <div className={`flex-1 pr-12 transform transition-all duration-1000 ease-out ${
+          <div className={`flex-1 pr-8 transform transition-all duration-1000 ease-out ${
             countersStarted ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
           }`}>
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
@@ -227,8 +227,7 @@ const ComplianceProductPage = () => {
           </div>
           
           {/* Illustration */}
-          <div className={`w-80 transform transition-all duration-1000 ease-out delay-300 ${
-            countersStarted ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+          <div className={`w-80 transform transition-all duration-1000 ease-out delay-300 
           }`}>
             <Image 
               src="/images/questions_g.png"
@@ -241,7 +240,7 @@ const ComplianceProductPage = () => {
         </div>
 
         {/* Solution Section */}
-        <div className="flex items-center space-x-12 ">
+        <div className="flex items-center space-x-8 ">
           {/* Solution Card */}
           <div className={`w-80 transform transition-all duration-1000 ease-out delay-500 ${
             countersStarted ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
