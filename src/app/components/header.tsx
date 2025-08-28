@@ -290,7 +290,7 @@ const Header = () => {
                 href="/" className="flex items-center cursor-pointer">
               <Image 
                 src={logo} 
-                alt="Accountant Tech Lab Logo" 
+                alt="Accountant Tech Labs Logo" 
                 width={120} 
                 height={46} 
                 className="h-14 w-auto" 

@@ -57,7 +57,7 @@ export default function ServicesPage() {
               <span className="text-[#000000]"> Conquer Cyber Threats</span>
             </h1>
             <p className="text-lg md:text-xl text-[#000000] leading-relaxed mb-4 max-w-4xl mx-auto">
-              Protect your digital assets and infrastructure with Accountant Tech Labs' comprehensive cybersecurity management services. We provide enterprise-grade protection to safeguard your organization against evolving threats.
+              Protect your digital assets and infrastructure with Accountant Tech Labss' comprehensive cybersecurity management services. We provide enterprise-grade protection to safeguard your organization against evolving threats.
             </p>
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 transform hover:scale-105">
               Request A Cybersecurity Consultation
