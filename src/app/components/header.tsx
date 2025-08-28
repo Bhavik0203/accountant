@@ -10,6 +10,32 @@ import fiIcon from '../../../public/images/Fi.png';
 import ci1Icon from '../../../public/images/ci1.png';
 import Link from 'next/link';
 
+// RotatingText component for character-by-character rotation animation
+const RotatingText = ({ text, isHovered }: { text: string; isHovered: boolean }) => {
+  return (
+    <span className="inline-flex">
+      {text.split('').map((char, index) => (
+        <span
+          key={index}
+          className={`inline-block ${
+            isHovered 
+              ? 'character-rotate' 
+              : ''
+          }`}
+          style={{
+            animationDelay: isHovered ? `${index * 50}ms` : '0ms',
+            animationDuration: '0.6s',
+            animationIterationCount: 1,
+            animationFillMode: 'forwards'
+          }}
+        >
+          {char === ' ' ? '\u00A0' : char}
+        </span>
+      ))}
+    </span>
+  );
+};
+
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -308,7 +334,7 @@ const Header = () => {
                   >
                     <Link href={item.link}>
                     <button className="text-gray-600 cursor-pointer hover:text-blue-600 transition-colors px-4 py-2 font-medium flex items-center space-x-1">
-                      <span>{item.name}</span>
+                      <RotatingText text={item.name} isHovered={hoveredItem === item.name} />
                       {item.hasPlus && <Plus className="h-3 w-3" />}
                     </button>
                     </Link>
