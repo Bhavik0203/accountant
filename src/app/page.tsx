@@ -147,11 +147,11 @@ export default function Home() {
           {/* Left Content */}
           <div className="lg:col-span-2 space-y-4">
             <div className="space-y-2">
-              <h1 className="text-4xl lg:text-5xl font-bold text-[#303030]/50 leading-tight drop-shadow-md">
+              <h1 className="text-4xl lg:text-5xl font-bold text-[#213AC8] leading-tight drop-shadow-md">
                 Complete Software Suite
                 <span className="text-[#303030] bg-clip-text text-4xl lg:text-5xl font-bold leading-tight"> for Chartered Accountants</span>
               </h1>
-              <h3 className="text-4xl lg:text-5xl font-bold text-[#303030]/50 leading-tight drop-shadow-md">
+              <h3 className="text-4xl lg:text-5xl font-bold text-[#213AC8] leading-tight drop-shadow-md">
                 and Finance Professionals
               </h3>
             </div>
@@ -213,7 +213,7 @@ export default function Home() {
         ref={textRef}
         className="space-y-6 max-w-2xl animate-slide-up"
       >
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#303030]/50 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-bold text-[#213AC8] leading-tight">
                 Why Choose <span className="text-[#303030]">Our Platform?</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
@@ -407,14 +407,14 @@ export default function Home() {
         className="space-y-6 mb-16  animate-slide-up"
       >
           <h2 className="text-4xl lg:text-5xl font-bold">
-            <span className="text-gray-400">See the</span>{" "}
+            <span className="text-[#213AC8]">See the</span>{" "}
             <span className="text-gray-800">Platform in Action</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Watch how our platform simplifies your workflow from compliance to invoicing — in under 2 minutes.
           </p>
           <div className="pt-4">
-            <button className="bg-blue-600 cursor-pointer text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <button className="bg-[#213AC8] cursor-pointer text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               Start Free Trial
             </button>
           </div>

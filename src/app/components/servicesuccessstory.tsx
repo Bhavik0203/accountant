@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Star } from 'lucide-react';
 
-export default function SuccessStory() {
+export default function ServicesSuccessStory() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -11,27 +11,27 @@ export default function SuccessStory() {
       id: 1,
       profileImage: "/images/profile1.jpg", // You'll need to add these images
       rating: 4.5,
-      review: "The automated compliance tracking saved us 50+ hours per week. Our audit preparation time decreased from weeks to days.",
-      author: "Mohammed Al-Rashid",
-      position: "Compliance Director",
-      company: "Devotion Financial Services"
+      review: "It has completely transformed how we manage our finances and tech stack. What used to take hours of juggling spreadsheets and tools now happens seamlessly in one place.",
+      author: "Sarah L",
+      position: "Founder Of BrightPath",
+      company: "Emirates Financial Services"
     },
     {
       id: 2,
       profileImage: "/images/profile2.jpg",
       rating: 4.5,
-      review: "Compliance Inbox reduced our compliance workload by 60% while improving accuracy. We now focus on strategic advisory as risks instead of administrative tasks.",
+      review: "I finally feel in control of both my books and technology. The clarity and guidance I've gotten here not only saved me money but also gave me the confidence to scale.",
       author: "Sarah Ahmed",
       position: "Managing Partner",
-      company: "SaaS Consulting Associates"
+      company: "Gulf Accounting Associates"
     },
     {
       id: 3,
       profileImage: "/images/profile3.jpg",
       rating: 4.5,
-      review: "Multi-jurisdiction compliance became manageable with centralized workflows. We expanded to new markets with confidence.",
-      author: "Priya Sharma",
-      position: "Regional Manager",
+      review: "As a CFO, I need precision and speed. Account & Tech Lab delivers both. From smart accounting insights to streamlined tech integrations, it's the most reliable support system we've had in years",
+      author: "Emily R",
+      position: "CFO At NovaTech",
       company: "International Business Solutions"
     }
   ];
@@ -63,8 +63,8 @@ export default function SuccessStory() {
   return (
     <div 
       ref={sectionRef}
-      className="px-4 py-10 relative overflow-hidden shadow-[0_-35px_60px_-12px_rgba(0,0,0,0.20)] bg-white" 
-      style={{ borderRadius: '160px 160px 0 0' }}
+      className="px-4 py-10 relative overflow-hidden  " 
+     
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
@@ -97,7 +97,7 @@ export default function SuccessStory() {
              {/* Profile Picture and Rating Row */}
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-[#213AC8] rounded-full mr-4 flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gray-300 rounded-full mr-4 flex items-center justify-center">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold">
                     {testimonial.author.split(' ').map(n => n[0]).join('')}
                   </div>

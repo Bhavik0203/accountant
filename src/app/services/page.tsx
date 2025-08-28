@@ -3,6 +3,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Header from '../components/header';
+import ServicesScrollBar from '../components/legacyScrollBar';
+import bg2 from '../../../public/images/bg1.png'
+import ServicesSuccessStory from '../components/servicesuccessstory';
+import group from '../../../public/group.png'
+import ContactOurTeam from '../components/contactourteam';
+import Footer from '../components/footer';
+
 
 export default function ServicesPage() {
   const [isBlurred, setIsBlurred] = useState(false);
@@ -14,12 +21,13 @@ export default function ServicesPage() {
       if (contentSectionRef.current) {
         const rect = contentSectionRef.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const sectionHeight = rect.height;
         
-        // Calculate when user has scrolled 2/3 through the section
-        const scrollProgress = (windowHeight - rect.top) / (sectionHeight + windowHeight);
+        // Apply blur when the bottom of the content section is near the top of viewport
+        // This creates a fade-out effect at the end of the section
+        const sectionBottom = rect.bottom;
+        const blurThreshold = windowHeight * 0.2; // Start blur when 20% of viewport height remains
         
-        if (scrollProgress >= 0.67) {
+        if (sectionBottom <= blurThreshold) {
           setIsBlurred(true);
         } else {
           setIsBlurred(false);
@@ -59,15 +67,18 @@ export default function ServicesPage() {
       </div>
 
       {/* Content Section */}
+      <div className="bg-cover bg-center bg-no-repeat p-8" style={{ backgroundImage: `url(${bg2.src})` }}>
+    
       <div 
         ref={contentSectionRef}
-        className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 transition-all duration-500 ${
+        className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 transition-all duration-500 ${
           isBlurred ? 'blur-sm' : 'blur-none'
         }`}
       >
+        
         {/* Problem Statement Section */}
         <div className="flex flex-col lg:flex-row items-center justify-between mb-16 gap-8">
-          <div className="flex-1 lg:pr-8">
+         <div className="flex-1 lg:pr-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Is Your Business Truly Protected?
             </h2>
@@ -116,28 +127,33 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* Additional Services Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">Risk Assessment</h4>
-            <p className="text-gray-600">
-              Comprehensive evaluation of your cybersecurity posture and compliance readiness.
-            </p>
-          </div>
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">Compliance Monitoring</h4>
-            <p className="text-gray-600">
-              Real-time tracking and automated reporting for regulatory compliance requirements.
-            </p>
-          </div>
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">Security Training</h4>
-            <p className="text-gray-600">
-              Employee cybersecurity awareness and best practices training programs.
-            </p>
-          </div>
-        </div>
+        
+        
       </div>
+      </div>
+      {/* -------------------------------- */}
+      <section id='events'>
+        <ServicesScrollBar/>
+     </section>
+     <div className="bg-cover bg-center bg-no-repeat p-8" style={{ backgroundImage: `url(${group.src})` }}>
+     <ServicesSuccessStory/>
+     <ContactOurTeam/>
+     <div className=" py-20 px-8">
+       <div className="max-w-4xl mx-auto text-center">
+         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+         Secure Your Future Today
+         </h2>
+         <p className="text-xl text-white mb-10 max-w-3xl mx-auto">
+         Ready to protect your organization's digital assets from evolving cyber threats? Our team is ready to build your defense.  </p>
+         <button className="bg-white text-blue-600 border border-blue-300 rounded-full px-8 py-4 text-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
+         Request a Cybersecurity Consultation
+         </button>
+       </div>
+     </div>
+      <div>
+        <Footer/>
+      </div>
+     </div>
     </div>
   );
 }

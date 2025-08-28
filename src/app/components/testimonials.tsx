@@ -86,7 +86,7 @@ export default function TestimonialSection() {
           }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-[#303030]/50">Trusted by</span>
+            <span className="text-[#213AC8]">Trusted by</span>
             <br />
             <span className="text-[#303030]">Professionals Across the Industry</span>
           </h2>
@@ -115,7 +115,7 @@ export default function TestimonialSection() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-gray-800 font-semibold mr-2">{testimonial.rating}</span>
-                  <Star className="w-5 h-5 fill-blue-500 text-blue-500" />
+                  <Star className="w-5 h-5 fill-[#213AC8] text-blue-500" />
                 </div>
               </div>
 
@@ -144,7 +144,7 @@ export default function TestimonialSection() {
             onClick={prevSlide}
             className="w-12 h-12 rounded-xl cursor-pointer bg-blue-100 hover:bg-blue-200 flex items-center justify-center transition-colors"
           >
-            <ChevronLeft className="w-6 h-6 text-blue-600" />
+            <ChevronLeft className="w-6 h-6 text-[#213AC8]" />
           </button>
 
           {/* Dots */}
@@ -163,7 +163,7 @@ export default function TestimonialSection() {
           {/* Next Button */}
           <button
             onClick={nextSlide}
-            className="w-12 h-12 rounded-xl cursor-pointer bg-blue-600 hover:bg-blue-700 flex items-center justify-center transition-colors"
+            className="w-12 h-12 rounded-xl cursor-pointer bg-[#213AC8] hover:bg-blue-700 flex items-center justify-center transition-colors"
           >
             <ChevronRight className="w-6 h-6 text-white" />
           </button>

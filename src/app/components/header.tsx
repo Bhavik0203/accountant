@@ -36,11 +36,11 @@ const Header = () => {
   const navigationItems = [
     {
       name:"ABOUT US",
-      link:"/about-us"
+      link:""
     },
     { 
       name: 'PRODUCTS', 
-      link: "/products",
+      link: "",
       hasPlus: true,
       dropdown: {
         title: "Accounting & Audit Suite",
@@ -174,54 +174,54 @@ const Header = () => {
       name: 'SERVICES', 
       link: "/services",
       hasPlus: true,
-      dropdown: {
-        title: "Professional Services",
-        subtitle: "Expert support and consulting",
+      // dropdown: {
+      //   title: "Professional Services",
+      //   subtitle: "Expert support and consulting",
        
-        features: [
-          {
-            icon: <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Implementation Support",
-            color: "blue"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Training & Workshops",
-            color: "green"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "24/7 Support",
-            color: "purple"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Custom Development",
-            color: "orange"
-          },
-          {
-            icon: <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
-              <div className="w-4 h-4 bg-white rounded-sm"></div>
-            </div>,
-            title: "Strategic Consulting",
-            subtitle: "Expert guidance for your business",
-            color: "indigo",
-            large: true
-          }
-        ]
-      }
+      //   features: [
+      //     {
+      //       icon: <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+      //         <div className="w-4 h-4 bg-white rounded-sm"></div>
+      //       </div>,
+      //       title: "Implementation Support",
+      //       color: "blue"
+      //     },
+      //     {
+      //       icon: <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+      //         <div className="w-4 h-4 bg-white rounded-sm"></div>
+      //       </div>,
+      //       title: "Training & Workshops",
+      //       color: "green"
+      //     },
+      //     {
+      //       icon: <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+      //         <div className="w-4 h-4 bg-white rounded-sm"></div>
+      //       </div>,
+      //       title: "24/7 Support",
+      //       color: "purple"
+      //     },
+      //     {
+      //       icon: <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+      //         <div className="w-4 h-4 bg-white rounded-sm"></div>
+      //       </div>,
+      //       title: "Custom Development",
+      //       color: "orange"
+      //     },
+      //     {
+      //       icon: <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+      //         <div className="w-4 h-4 bg-white rounded-sm"></div>
+      //       </div>,
+      //       title: "Strategic Consulting",
+      //       subtitle: "Expert guidance for your business",
+      //       color: "indigo",
+      //       large: true
+      //     }
+      //   ]
+      // }
     },
     {
       name:"CONTACT US",
-      link:"/contact-us"
+      link:""
     }
   ];
 

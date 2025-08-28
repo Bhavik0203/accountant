@@ -126,7 +126,7 @@ const CounterSection: React.FC = () => {
         {/* Header */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
-            <span className="text-gray-500">Numbers that</span>{' '}
+            <span className="text-[#213AC8]">Numbers that</span>{' '}
             <span className="text-black">Speak for </span>
             <br/>
             <span className="text-black mt-2">Themselves</span>
@@ -142,13 +142,13 @@ const CounterSection: React.FC = () => {
             >
               {/* Counter Number */}
               <div className="mb-4">
-                <span className="text-5xl md:text-6xl lg:text-7xl font-bold text-blue-600 block leading-none">
+                <span className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#213AC8] block leading-none">
                   {counter.formatter(counter.value)}
                 </span>
               </div>
 
               {/* Thin horizontal line */}
-              <div className="w-16 h-0.5 bg-gray-300 mx-auto mb-4"></div>
+              <div className="w-16 h-0.5 bg-[#213AC8] mx-auto mb-4"></div>
 
               {/* Counter Label */}
               <div className="text-black text-base md:text-lg font-normal leading-relaxed max-w-xs mx-auto">

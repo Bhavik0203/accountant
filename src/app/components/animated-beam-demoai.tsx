@@ -25,7 +25,7 @@ const Circle = forwardRef<
 
 Circle.displayName = "Circle";
 
-export default function AnimatedBeamDemo() {
+export default function AnimatedBeamDemoAi() {
   const containerRef = useRef<HTMLDivElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
@@ -145,7 +145,7 @@ const Icons = {
   ),
   openai: () => (
     <Image
-      src="/images/ci-d.png"
+      src="/images/ai.png"
       alt="OpenAI"
       width={48}
       height={48}

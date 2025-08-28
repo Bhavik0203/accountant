@@ -29,6 +29,7 @@ import SuccessStory from '../components/successstory';
 import Footer from '../components/footer';
 import StoryCounter from '../components/storycounter';
 import SecurityReliabilitySection from '../components/security';
+import AnimatedBeamDemoAi from '../components/animated-beam-demo';
 
 // Counter component for statistics
 const AnimatedCounter = ({ target, suffix, duration = 2000, shouldStart = false }: { target: number, suffix: string, duration?: number, shouldStart?: boolean }) => {
@@ -151,14 +152,14 @@ const AnalyticsInboxPage = () => {
       {/* Hero Section */}
       <div className="max-w-6xl mx-auto px-2 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#213AC8] mb-6">
             Analytics Inbox: Transform Data into Actionable Insights
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
             A comprehensive MIS automation and business intelligence platform designed specifically for small to mid-size organizations. 
             Eliminate manual reporting processes and enhance data-driven decision making with seamless ERP integration.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl">
+          <button className="bg-[#213AC8] hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl">
             Schedule Demo
           </button>
         </div>
@@ -168,7 +169,7 @@ const AnalyticsInboxPage = () => {
           <div className={`bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl max-w-3xl mx-auto p-8 relative overflow-hidden min-h-[300px] transition-all duration-500 ${
             isBlurred ? 'blur-sm' : 'blur-none'
           }`}>
-            <AnimatedBeamDemo/>
+            <AnimatedBeamDemoAi/>
           </div>
         </div>
       </div>
@@ -182,7 +183,7 @@ const AnalyticsInboxPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* First Statistic */}
-            <div className="text-center">
+            <div className="text-center ">
               <AnimatedCounter target={90} suffix="%" shouldStart={countersStarted} />
               <div className="text-lg text-gray-600">
                 Reduction in Manual Reporting

@@ -58,7 +58,7 @@ const FinancialSuiteLanding = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-        <h2 className="text-4xl lg:text-5xl font-bold text-[#303030]/50 leading-tight">
+        <h2 className="text-4xl lg:text-5xl font-bold text-[#213AC8] leading-tight">
               
             Explore Our 
           </h2>
@@ -157,7 +157,7 @@ const FinancialSuiteLanding = () => {
                   </motion.p>
                   
                   <motion.button 
-                    className="inline-flex  cursor-pointer items-center space-x-3 text-blue-600 hover:text-blue-700 font-semibold transition-colors group border-2 border-blue-600 rounded-xl px-6 py-3 hover:bg-blue-50 hover:shadow-md"
+                    className="inline-flex  cursor-pointer items-center space-x-3 text-[#213AC8] hover:text-blue-700 font-semibold transition-colors group border-2 border-[#213AC8] rounded-xl px-6 py-3 hover:bg-blue-50 hover:shadow-md"
                     initial={{ y: 15, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.15 }}
