@@ -62,7 +62,7 @@ const Header = () => {
   const navigationItems = [
     {
       name:"ABOUT US",
-      link:""
+      link:"/about-us"
     },
     { 
       name: 'PRODUCTS', 
